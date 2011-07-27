@@ -1,0 +1,9 @@
+channel= ""
+irc=""
+user=""
+line=""
+owner="triclops200"
+operator=False
+debug = False
+sendAll = False
+kill = False
