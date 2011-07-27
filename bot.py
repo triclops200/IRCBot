@@ -20,17 +20,13 @@ file2.close()
 port = 6667
 irc = socket.socket ( socket.AF_INET, socket.SOCK_STREAM )
 varsl.irc = irc
+irc.settimeout(10)
 irc.connect ( ( network, port ) )
 irc.send ( 'NICK %s\r\n'%nick )
-print irc.recv(4096)
 irc.send ( 'USER %s %s %s :%s\r\n' %(nick,nick,nick,nick) )
-print irc.recv(4096)
 irc.send ( 'JOIN %s\r\n' %channel)
-print irc.recv(4096)
 irc.send ( 'NICKSERV :identify %s\r\n'%password )
-print irc.recv(4096)
 irc.send ( "PRIVMSG "+channel+" :Triclops200's bot is in the house!\r\n" )
-print irc.recv(4096)
 varsl.irc=irc
 print "connected"
 usercount=0
